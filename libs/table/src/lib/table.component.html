@@ -1,0 +1,65 @@
+<div class="p-12 bg-slate-200">
+  <table class="border-gray-200 dark:border-gray-800 w-full border-b">
+    <thead>
+      @for (headerGroup of table.getHeaderGroups(); track headerGroup.id) {
+        <tr>
+          @for (header of headerGroup.headers; track header.id) {
+            @if (!header.isPlaceholder) {
+              <th>
+                <ng-container
+                  *flexRender="
+                    header.column.columnDef.header;
+                    props: header.getContext();
+                    let header
+                  "
+                >
+                  <div class="border-b px-4 py-3.5 text-left text-sm font-semibold border-gray-200 dark:border-gray-800" [innerHTML]="header"></div>
+                </ng-container>
+              </th>
+            }
+          }
+        </tr>
+      }
+    </thead>
+    <tbody>
+      @for (row of table.getRowModel().rows; track row.id) {
+        <tr>
+          @for (cell of row.getVisibleCells(); track cell.id) {
+            <td>
+              <ng-container
+                *flexRender="
+                  cell.column.columnDef.cell;
+                  props: cell.getContext();
+                  let cell
+                "
+              >
+                <div class="text-gray-600 text-sm" [innerHTML]="cell"></div>
+              </ng-container>
+            </td>
+          }
+        </tr>
+      }
+    </tbody>
+    <tfoot>
+      @for (footerGroup of table.getFooterGroups(); track footerGroup.id) {
+        <tr>
+          @for (footer of footerGroup.headers; track footer.id) {
+            <th>
+              <ng-container
+                *flexRender="
+                  footer.column.columnDef.footer;
+                  props: footer.getContext();
+                  let footer
+                "
+              >
+                {{ footer }}
+              </ng-container>
+            </th>
+          }
+        </tr>
+      }
+    </tfoot>
+  </table>
+
+  <div class="h-4"></div>
+</div>
