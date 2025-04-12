@@ -15,9 +15,7 @@
         "outputPath": "dist/apps/app",
         "index": "apps/app/src/index.html",
         "browser": "apps/app/src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
+        "polyfills": ["zone.js"],
         "tsConfig": "apps/app/tsconfig.app.json",
         "assets": [
           {
@@ -25,9 +23,7 @@
             "input": "apps/app/public"
           }
         ],
-        "styles": [
-          "apps/app/src/styles.css"
-        ],
+        "styles": ["apps/app/src/styles.css"],
         "scripts": [],
         "server": "apps/app/src/main.server.ts",
         "ssr": {
