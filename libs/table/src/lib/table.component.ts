@@ -22,5 +22,6 @@ export class TableComponent<T> {
     data: this.data(),
     columns: this.columns(),
     getCoreRowModel: getCoreRowModel(),
+    enableRowSelection: true,
   }))
 }

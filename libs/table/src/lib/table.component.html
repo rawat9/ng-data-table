@@ -1,11 +1,11 @@
-<div class="p-12 bg-slate-200">
-  <table class="border-gray-200 dark:border-gray-800 w-full border-b">
-    <thead>
+<div class="w-full overflow-auto whitespace-nowrap">
+  <table class="caption-bottom border-b border-gray-200 dark:border-gray-800">
+    <thead class="bg-gray-50 dark:bg-gray-800">
       @for (headerGroup of table.getHeaderGroups(); track headerGroup.id) {
         <tr>
           @for (header of headerGroup.headers; track header.id) {
             @if (!header.isPlaceholder) {
-              <th>
+              <th class="border-b px-4 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-50 border-gray-200 dark:border-gray-800">
                 <ng-container
                   *flexRender="
                     header.column.columnDef.header;
@@ -13,7 +13,7 @@
                     let header
                   "
                 >
-                  <div class="border-b px-4 py-3.5 text-left text-sm font-semibold border-gray-200 dark:border-gray-800" [innerHTML]="header"></div>
+                  <div [innerHTML]="header"></div>
                 </ng-container>
               </th>
             }
@@ -21,9 +21,9 @@
         </tr>
       }
     </thead>
-    <tbody>
+    <tbody class="divide-y divide-gray-200 dark:divide-gray-800 overflow-auto">
       @for (row of table.getRowModel().rows; track row.id) {
-        <tr>
+        <tr class="[&_td:last-child]:pr-4 [&_th:last-child]:pr-4 [&_td:first-child]:pl-4 [&_th:first-child]:pl-4">
           @for (cell of row.getVisibleCells(); track cell.id) {
             <td>
               <ng-container
@@ -33,33 +33,31 @@
                   let cell
                 "
               >
-                <div class="text-gray-600 text-sm" [innerHTML]="cell"></div>
+                <div class="p-3 text-sm text-gray-600 dark:text-gray-400" [innerHTML]="cell"></div>
               </ng-container>
             </td>
           }
         </tr>
       }
     </tbody>
-    <tfoot>
-      @for (footerGroup of table.getFooterGroups(); track footerGroup.id) {
-        <tr>
-          @for (footer of footerGroup.headers; track footer.id) {
-            <th>
-              <ng-container
-                *flexRender="
-                  footer.column.columnDef.footer;
-                  props: footer.getContext();
-                  let footer
-                "
-              >
-                {{ footer }}
-              </ng-container>
-            </th>
-          }
-        </tr>
-      }
-    </tfoot>
+<!--    <tfoot class="border-t text-left font-medium text-gray-900 dark:text-gray-50 border-gray-200 dark:border-gray-800">-->
+<!--      @for (footerGroup of table.getFooterGroups(); track footerGroup.id) {-->
+<!--        <tr>-->
+<!--          @for (footer of footerGroup.headers; track footer.id) {-->
+<!--            <th>-->
+<!--              <ng-container-->
+<!--                *flexRender="-->
+<!--                  footer.column.columnDef.footer;-->
+<!--                  props: footer.getContext();-->
+<!--                  let footer-->
+<!--                "-->
+<!--              >-->
+<!--                {{ footer }}-->
+<!--              </ng-container>-->
+<!--            </th>-->
+<!--          }-->
+<!--        </tr>-->
+<!--      }-->
+<!--    </tfoot>-->
   </table>
-
-  <div class="h-4"></div>
 </div>
