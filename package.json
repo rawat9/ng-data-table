@@ -2,11 +2,11 @@
   "name": "ng-data-table",
   "version": "0.0.0",
   "license": "MIT",
+  "private": true,
+  "keywords": ["angular", "table"],
   "scripts": {
     "serve:app": "nx run app:serve"
   },
-  "private": true,
-  "keywords": ["angular", "table"],
   "dependencies": {
     "@angular/cdk": "19.2.11",
     "@angular/common": "19.2.8",
@@ -87,5 +87,5 @@
     "typescript-eslint": "8.29.1",
     "vite": "6.3.3",
     "vitest": "3.1.1"
-  },
+  }
 }
