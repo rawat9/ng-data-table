@@ -2,12 +2,12 @@ import { Component } from '@angular/core'
 import { TableComponent } from 'table'
 import { ColumnDef } from '@tanstack/angular-table'
 import { type Transaction, transactions } from './data'
+import { TableFilterComponent } from 'table/filter'
 
 @Component({
-  imports: [TableComponent],
+  imports: [TableComponent, TableFilterComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
 })
 export class AppComponent {
   columns: ColumnDef<Transaction>[] = [

@@ -1,5 +1,6 @@
 <div class="flex flex-col justify-center p-4 items-center min-h-screen">
-  <div class="border border-gray-200 dark:border-gray-800 rounded-lg shadow-md bg-white dark:bg-gray-900 w-auto h-[600px]">
+  <div class="flex flex-col gap-4">
+    <lib-table-filter></lib-table-filter>
     <lib-table [data]="transactions" [columns]="columns"></lib-table>
   </div>
 </div>
