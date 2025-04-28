@@ -4,6 +4,7 @@ import {
   createAngularTable,
   FlexRenderDirective,
   getCoreRowModel,
+  Table,
 } from '@tanstack/angular-table'
 
 @Component({
@@ -18,10 +19,14 @@ export class TableComponent<T> {
 
   readonly columns = input.required<ColumnDef<T, never>[]>()
 
-  table = createAngularTable(() => ({
-    data: this.data(),
-    columns: this.columns(),
-    getCoreRowModel: getCoreRowModel(),
-    enableRowSelection: true,
-  }))
+  protected table: Table<T>
+
+  constructor() {
+    this.table = createAngularTable(() => ({
+      data: this.data(),
+      columns: this.columns(),
+      getCoreRowModel: getCoreRowModel(),
+      enableRowSelection: true,
+    }))
+  }
 }
