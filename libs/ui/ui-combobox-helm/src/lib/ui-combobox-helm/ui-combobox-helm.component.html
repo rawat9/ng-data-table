@@ -1,0 +1,49 @@
+<brn-popover
+  [state]="state()"
+  (stateChanged)="stateChanged($event)"
+  sideOffset="5"
+>
+  <button
+    class="w-20 justify-between bg-white hover:bg-gray-50"
+    id="edit-profile"
+    variant="outline"
+    size="sm"
+    brnPopoverTrigger
+    hlmBtn
+  >
+    {{ currentFramework() ? currentFramework()?.label : 'Filter' }}
+    <ng-icon hlm size="sm" name="lucideFilter" />
+  </button>
+  <hlm-command
+    *brnPopoverContent="let ctx"
+    hlmPopoverContent
+    class="p-0 w-[200px] bg-white"
+  >
+    <hlm-command-search>
+      <ng-icon hlm name="lucideSearch" />
+      <input placeholder="Search framework..." hlm-command-search-input />
+    </hlm-command-search>
+    <div *brnCommandEmpty hlmCommandEmpty>No results found.</div>
+    <hlm-command-list>
+      <hlm-command-group>
+        <button
+          class="hover:bg-gray-50 rounded-md cursor-pointer"
+          *ngFor="let framework of frameworks"
+          hlm-command-item
+          [value]="framework.value"
+          (selected)="commandSelected(framework)"
+        >
+          <ng-icon
+            hlm
+            [class.opacity-0]="
+                  currentFramework()?.value !== framework.value
+                "
+            name="lucideCheck"
+            hlmCommandIcon
+          />
+          {{ framework.label }}
+        </button>
+      </hlm-command-group>
+    </hlm-command-list>
+  </hlm-command>
+</brn-popover>

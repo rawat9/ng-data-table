@@ -9,14 +9,24 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2015",
+    "strict": true,
     "module": "esnext",
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "table": ["libs/table/src/index.ts"]
+      "table": ["libs/table/src/index.ts"],
+      "table/filter": ["libs/table/src/lib/filter/index.ts"],
+      "ui/command": ["libs/ui/ui-command-helm/src/index.ts"],
+      "ui/button": ["libs/ui/ui-button-helm/src/index.ts"],
+      "ui/icon": ["libs/ui/ui-icon-helm/src/index.ts"],
+      "ui/combobox": ["libs/ui/ui-combobox-helm/src/index.ts"],
+      "ui/popover": ["libs/ui/ui-popover-helm/src/index.ts"]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }
