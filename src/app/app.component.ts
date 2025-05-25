@@ -1,11 +1,10 @@
-import { ButtonDirective } from '~/ui/button'
 import { Component } from '@angular/core'
 import { TableComponent } from 'table'
 import { ColumnDef } from '@tanstack/angular-table'
 import { type Transaction, transactions } from './data'
 
 @Component({
-  imports: [ButtonDirective, TableComponent],
+  imports: [TableComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

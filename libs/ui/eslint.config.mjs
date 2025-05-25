@@ -16,6 +16,7 @@ export default [
           style: 'camelCase'
         }
       ],
+      '@angular-eslint/directive-class-suffix': 'off',
       '@angular-eslint/component-selector': [
         'error',
         {
@@ -28,7 +29,6 @@ export default [
   },
   {
     files: ['**/*.html'],
-    // Override or add rules here
     rules: {}
   }
 ]
