@@ -1,6 +1,7 @@
 name: CI
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -30,7 +31,6 @@ jobs:
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org/
-          cache: 'pnpm'
 
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install --with-deps
