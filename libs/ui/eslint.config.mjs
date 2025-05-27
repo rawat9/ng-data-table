@@ -17,11 +17,13 @@ export default [
         }
       ],
       '@angular-eslint/directive-class-suffix': 'off',
+      '@angular-eslint/component-class-suffix': 'off',
+      '@angular-eslint/no-output-on-prefix': 'off',
       '@angular-eslint/component-selector': [
         'error',
         {
           type: 'element',
-          prefix: 'lib',
+          prefix: '',
           style: 'kebab-case'
         }
       ]

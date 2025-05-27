@@ -16,7 +16,10 @@
     "baseUrl": ".",
     "paths": {
       "table": ["libs/table/src/index.ts"],
-      "~/ui/button": ["libs/ui/button/button.ts"]
+      "~/ui/button": ["libs/ui/button/button.ts"],
+      "~/ui/table": ["libs/ui/table/table.ts"],
+      "~/ui/dropdown": ["libs/ui/dropdown/dropdown.ts"],
+      "~/ui/utils": ["libs/ui/utils/index.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]

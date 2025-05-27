@@ -8,7 +8,7 @@ import { cn } from '../utils'
     '[attr.data-slot]': '"table-head"'
   }
 })
-export class OriTableHead {
+export class TableHead {
   readonly class = input<string>()
 
   protected readonly hostClasses = computed(() =>

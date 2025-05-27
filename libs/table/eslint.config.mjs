@@ -16,11 +16,12 @@ export default [
           style: 'camelCase'
         }
       ],
+      '@angular-eslint/component-class-suffix': 'off',
       '@angular-eslint/component-selector': [
         'error',
         {
           type: 'element',
-          prefix: 'lib',
+          prefix: 'ng',
           style: 'kebab-case'
         }
       ]

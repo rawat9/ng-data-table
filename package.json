@@ -19,13 +19,16 @@
     "@angular/platform-server": "~19.2.0",
     "@angular/router": "~19.2.0",
     "@angular/ssr": "~19.2.0",
-    "@radix-ng/primitives": "^0.39.2",
+    "@ng-icons/core": "31.4.0",
+    "@ng-icons/radix-icons": "31.4.0",
+    "@radix-ng/primitives": "0.39.2",
     "@tanstack/angular-table": "8.21.3",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "express": "^4.21.2",
+    "ng-primitives": "^0.44.0",
     "rxjs": "~7.8.0",
-    "zone.js": "~0.15.0"
+    "zone.js": "0.15.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~19.2.0",

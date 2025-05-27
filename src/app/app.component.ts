@@ -1,10 +1,10 @@
 import { Component } from '@angular/core'
-import { TableComponent } from 'table'
+import { NgDataTable } from 'table'
 import { ColumnDef } from '@tanstack/angular-table'
 import { type Transaction, transactions } from './data'
 
 @Component({
-  imports: [TableComponent],
+  imports: [NgDataTable],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -12,15 +12,9 @@ import { type Transaction, transactions } from './data'
 export class AppComponent {
   columns: ColumnDef<Transaction>[] = [
     {
-      accessorKey: 'transaction_id',
-      cell: (info) => info.getValue(),
-      header: 'Transaction ID'
-    },
-    {
-      accessorKey: 'transaction_date',
-      id: 'date',
-      cell: (info) => info.getValue(),
-      header: 'Date'
+      accessorKey: 'merchant',
+      header: 'Merchant',
+      footer: (info) => info.column.id
     },
     {
       accessorKey: 'expense_status',
@@ -37,10 +31,26 @@ export class AppComponent {
       footer: (info) => info.column.id
     },
     {
+      accessorKey: 'country',
+      header: 'Country',
+      footer: (info) => info.column.id
+    },
+    {
+      accessorKey: 'continent',
+      header: 'Continent',
+      footer: (info) => info.column.id
+    },
+    {
       accessorKey: 'amount',
       header: 'Amount ($)',
       footer: (info) => info.column.id,
       meta: {}
+    },
+    {
+      accessorKey: 'transaction_date',
+      id: 'date',
+      cell: (info) => info.getValue(),
+      header: 'Date'
     }
   ]
 

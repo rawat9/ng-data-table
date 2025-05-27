@@ -39,7 +39,7 @@ type ButtonVariant = NonNullable<ButtonProps['variant']>
     '[class]': 'hostClasses()'
   }
 })
-export class ButtonDirective {
+export class Button {
   readonly class = input<string>()
   readonly variant = input<ButtonVariant>('default')
   readonly size = input<ButtonSize>('default')
