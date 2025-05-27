@@ -52,12 +52,7 @@ export class NgDataTable<T> {
 
   protected table: TanstackTable<T>
 
-  readonly sorting = signal<SortingState>([
-    {
-      id: 'name',
-      desc: false
-    }
-  ])
+  readonly sorting = signal<SortingState>([])
 
   constructor() {
     this.table = createAngularTable(() => ({
